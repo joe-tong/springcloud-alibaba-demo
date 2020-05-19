@@ -1,0 +1,27 @@
+server:
+  port: 6003
+
+spring:
+  application:
+    name: order-server
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.223.1:8848
+
+
+#指定FeignClientApi的日志级别
+logging:
+  level:
+    com:
+      tpp:
+        feign: debug
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
+

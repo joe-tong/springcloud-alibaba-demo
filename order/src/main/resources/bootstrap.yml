@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.0.135:8848
+        file-extension: yml
+        shared-dataids: common.yml,common2.yml
+        refreshable-dataids: common.yml,common2.yml
+        ext-config:
+          - data-id: common3.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: common4.yml
+            group: DEFAULT_GROUP
+            refresh: true
+  application:
+    name: order-server
+  profiles:
+    active: dev
